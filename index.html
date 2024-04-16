@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newton cradle</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 50vh;
+        display: grid;
+        place-items: center;
+        background-color: #191825;
+      }
+      .cradle {
+        width: 400px;
+        height: 0px;
+        border: 10px solid purple;
+        border-radius: 20px;
+        display: flex;
+        gap: 42px;
+        justify-content: center;
+      }
+      div {
+        height: 250px;
+        border: 4px solid purple;
+        position: relative;
+      }
+      .cradle div::after {
+        content: "";
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        background-color: purple;
+        border-radius: 50%;
+        bottom: -50px;
+        left: -25px;
+      }
+      .cradle div:first-child {
+        animation: lefty 2s linear infinite;
+        transform-origin: top left;
+      }
+      @keyframes lefty {
+        0% {
+          rotate: 0deg;
+        }
+        25% {
+          rotate: 20deg;
+        }
+        50% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 0deg;
+        }
+      }
+      .cradle div:last-child {
+        animation: right 2s linear 1s infinite;
+        transform-origin: top left;
+      }
+      @keyframes right {
+        0% {
+          rotate: 0deg;
+        }
+        25% {
+          rotate: -20deg;
+        }
+        50% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 0deg;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cradle">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
